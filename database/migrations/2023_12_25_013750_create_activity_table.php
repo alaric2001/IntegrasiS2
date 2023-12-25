@@ -25,9 +25,11 @@ return new class extends Migration
             $table->unsignedBigInteger('conveyor_id');
             $table->foreign('conveyor_id')->references('id')->on('conveyors')->onDelete('cascade');
 
+            $table->string('nama');
+            $table->string('status');
             $table->string('lokasi');
-            $table->date('activity_date');
-            $table->integer('duration');
+            $table->date('activity_date')->nullable();
+            $table->integer('duration')->nullable();
             $table->integer('batch')->nullable();
             $table->timestamps();
         });

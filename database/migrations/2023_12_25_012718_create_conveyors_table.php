@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('tipe');
             $table->string('status');
-            $table->integer('kapasitas');
+            $table->float('kapasitas');
             $table->timestamps();
         });
     }
