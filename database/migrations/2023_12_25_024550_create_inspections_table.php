@@ -24,6 +24,11 @@ return new class extends Migration
             $table->string('quality');
             $table->string('keterangan');
             $table->timestamp('time', $precision = 0);
+            $table->float('diameter')->nullable();
+            $table->float('berat')->nullable();
+            $table->float('lebar')->nullable();
+            $table->float('panjang')->nullable();
+            $table->float('tinggi')->nullable();
             $table->timestamps();
         });
     }

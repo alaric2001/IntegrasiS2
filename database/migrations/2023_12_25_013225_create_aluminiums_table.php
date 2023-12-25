@@ -14,11 +14,7 @@ return new class extends Migration
         Schema::create('aluminiums', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->float('diameter')->nullable();
-            $table->float('berat')->nullable();
-            $table->float('lebar')->nullable();
-            $table->float('panjang')->nullable();
-            $table->float('tinggi')->nullable();
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
