@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConveyorController;
+use App\Http\Controllers\UltrasonicController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\OperatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('conveyors', ConveyorController::class);
+Route::resource('ultrasonics', UltrasonicController::class);
+Route::resource('activities', ActivityController::class);
+Route::resource('operators', OperatorController::class);
