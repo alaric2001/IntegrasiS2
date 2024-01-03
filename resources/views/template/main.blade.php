@@ -42,6 +42,11 @@
             .logo-xl.brand-image-xs {
                 left: 25%;
             }
+            .table td.fit,
+            .table th.fit {
+                white-space: nowrap;
+                width: 1%;
+            }
         </style>
     </head>
 
@@ -57,7 +62,8 @@
                                 class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="index3.html" class="nav-link">Home</a>
+                        {{-- Home Button --}}
+                        <a href="/" class="nav-link">Home</a>
                     </li>
                 </ul>
 
@@ -87,7 +93,7 @@
                     </li>
 
                     <!-- Notifications Dropdown Menu -->
-                    <li class="nav-item dropdown">
+                    <li id="notification" class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             <i class="far fa-bell"></i>
                             <span class="badge badge-warning navbar-badge">15</span>
@@ -113,7 +119,7 @@
                             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li id="fullscreenBtn-navbar" class="nav-item">
                         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                             <i class="fas fa-expand-arrows-alt"></i>
                         </a>
@@ -125,7 +131,7 @@
             <!-- Main Sidebar -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
-                <a href="#" class="brand-link logo-switch mx-auto text-center">
+                <a href="/" id="logo" class="brand-link logo-switch mx-auto text-center">
                     <img src="Inalum Logo.png" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs">
                     <img src="Inalum logo text.png" alt="AdminLTE Docs Logo Large" class="brand-image-xs logo-xl">
                 </a>
@@ -138,7 +144,7 @@
                             <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block">Alexander Pierce</a>
+                            <a href="/profile" class="d-block">Shobrun Jamil</a>
                         </div>
                     </div>
 
@@ -160,9 +166,8 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">
                             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/" class="nav-link">
                                     <i class="nav-icon fas fa-home"></i>
                                     <p>Home</p>
                                 </a>
@@ -177,25 +182,30 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="/eqdashboard" class="nav-link">
+                                            <p>Dashboard</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/conveyor" class="nav-link">
                                             <p>Conveyor</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link active">
+                                        <a href="/ultrasonic" class="nav-link active">
                                             <p>Ultrasonic</p>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/activity" class="nav-link">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>Activity</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/inspection" class="nav-link">
                                     <i class="nav-icon fas fa-poll-h"></i>
                                     <p>Inspection</p>
                                 </a>
@@ -210,20 +220,21 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="/setting" class="nav-link">
                                             <i class="fas fa-wrench nav-icon ml-3"></i>
                                             <p>Setting</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="#logout" class="nav-link">
                                             <i class="fas fa-power-off nav-icon ml-3"></i>
                                             <p>Log out</p>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item menu-open">
+
+                            {{-- <li class="nav-item menu-open">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
@@ -262,7 +273,8 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> --}}
+
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->
