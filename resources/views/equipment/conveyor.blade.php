@@ -276,7 +276,7 @@
                 },
                 {
                     extend:'print',
-                    title: 'Ultrasonic Equipment Data',
+                    title: 'Conveyor Equipment Data',
                     messageBottom:'Copyright© ' + new Date().getFullYear() + ' by Inalum'
                 }
             ],
