@@ -18,7 +18,13 @@ use App\Http\Controllers\OperatorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('/equipment', function () {
+    return view('equipment/dashboard');
+});
+Route::get('/detail', function () {
+    return view('equipment/detail');
 });
 
 Route::resource('conveyors', ConveyorController::class);
