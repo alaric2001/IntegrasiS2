@@ -177,8 +177,8 @@
                 <div class="modal-body">
                     @csrf
                     <div class="form-group" hidden>
-                        <label for="name">ID</label>
-                        <input class="form-control" type="text" name="name" placeholder="">
+                        <label for="id">ID</label>
+                        <input class="form-control" type="hidden" name="id" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="category">Category</label>

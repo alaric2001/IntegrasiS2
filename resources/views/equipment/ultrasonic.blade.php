@@ -214,14 +214,14 @@
                 <div class="modal-body">
                     @csrf
                     <div class="form-group" hidden>
-                        <label for="name">ID</label>
-                        <input class="form-control" type="text" name="name" placeholder="">
+                        <label for="id">ID</label>
+                        <input class="form-control" type="hidden" name="id" placeholder="">
                     </div>
                     <div class="form-group" hidden>
                         <label for="category">Category</label>
                         <select class="form-control" id="category">
-                            <option selected>Ultrasonic</option>
-                            <option>Conveyor</option>
+                            <option selected value="Ultrasonic">Ultrasonic</option>
+                            <option value="Conveyor">Conveyor</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -237,9 +237,9 @@
                     <div class="form-group">
                         <label for="aktivitas">Aktivitas</label>
                         <select class="form-control" id="aktivitas">
-                            <option>Act. Billet</option>
-                            <option>Act. Ingot</option>
-                            <option>Act. Alloy</option>
+                            <option value="Act. Billet">Act. Billet</option>
+                            <option value="Act. Ingot">Act. Ingot</option>
+                            <option value="Act. Alloy">Act. Alloy</option>
                         </select>
                     </div>
                     <div class="form-group">
