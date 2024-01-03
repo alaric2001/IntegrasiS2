@@ -225,31 +225,3 @@
 </div>
 <!-- Modal Add -->
 @endsection
-@section('additional-script')
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable({
-            responsive: true,
-            dom:
-                "<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
-                "<'row'<'col-sm-12'tr>>" +
-                "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-            buttons: [
-                {
-                    extend:'csv',
-                    text: 'Export CSV',
-                    split:['excel', 'pdf']
-                },
-                {
-                    extend:'print',
-                    title: 'Ultrasonic Equipment Data',
-                    messageBottom:'Copyright© ' + new Date().getFullYear() + ' by Inalum'
-                }
-            ],
-            initComplete: function() {
-            $(".dataTables_filter input").addClass("form-control form-control-sm");
-            }
-        });
-    });
-</script>
-@endsection
