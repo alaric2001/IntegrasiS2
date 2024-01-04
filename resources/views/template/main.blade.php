@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
         <!-- sweetalert2 style -->
         <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css')}}">
+        <!-- sweetalert2 BS4 style -->
+        <link rel="stylesheet" href="{{ asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
         <!-- dataTables-bs4 style -->
         <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
         <!-- dataTables-buttons style -->
@@ -21,8 +23,13 @@
         <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
         <!-- Toastr style -->
         <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css')}}">
+        <!-- Select2 style -->
+        <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css')}}">
+        <!-- Select2 BS4 style -->
+        <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
         <!-- tempusdominus style -->
-        <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4css/tempusdominus-bootstrap-4.css')}}">
+        {{-- <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4css/tempusdominus-bootstrap-4.css')}}"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
         <style>
@@ -172,7 +179,7 @@
                                     <p>Home</p>
                                 </a>
                             </li>
-                            <li class="nav-item menu-open">
+                            <li class="nav-item menu-close">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-tools"></i>
                                     <p>
@@ -192,27 +199,39 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/ultrasonic" class="nav-link active">
+                                        <a href="/ultrasonic" class="nav-link">
                                             <p>Ultrasonic</p>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="/activity" class="nav-link">
+                                <a href="/acdashboard" class="nav-link active">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>Activity</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/inspection" class="nav-link">
-                                    <i class="nav-icon fas fa-poll-h"></i>
+                                <a href="/inspecdashboard" class="nav-link">
+                                    <i class="nav-icon fas fa-clipboard-check"></i>
                                     <p>Inspection</p>
                                 </a>
                             </li>
-                            <li class="nav-item menu-open">
+                            <li class="nav-item">
+                                <a href="/bcdashboard" class="nav-link">
+                                    <i class="nav-icon fas fa-boxes"></i>
+                                    <p>Batch</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/prdashboard" class="nav-link">
+                                    <i class="nav-icon fas fa-box"></i>
+                                    <p>Product</p>
+                                </a>
+                            </li>
+                            <li class="nav-item menu-close">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <i class="nav-icon fas fa-user"></i>
                                     <p>
                                         User
                                         <i class="right fas fa-angle-left"></i>
@@ -221,13 +240,11 @@
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
                                         <a href="/setting" class="nav-link">
-                                            <i class="fas fa-wrench nav-icon ml-3"></i>
                                             <p>Setting</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#logout" class="nav-link">
-                                            <i class="fas fa-power-off nav-icon ml-3"></i>
                                             <p>Log out</p>
                                         </a>
                                     </li>
@@ -326,12 +343,21 @@
         <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
         <!-- toastr JS -->
         <script src="{{ asset('plugins/toastr/toastr.min.js')}}"></script>
+        <!-- select2 JS -->
+        <script src="{{ asset('plugins/select2/js/select2.full.min.js')}}"></script>
         <!-- moment JS -->
         <script src="{{ asset('plugins/moment/moment-with-locales.min.js')}}"></script>
         <!-- moment JS -->
         <script src="{{ asset('plugins/moment/locale/id.js')}}"></script>
         <!-- tempusdominus JS -->
         <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+        <script
+            src="https://cdn.datatables.net/v/bs4/jszip-3.10.1/dt-1.13.8/af-2.6.0/b-2.4.2/b-colvis-2.4.2/b-html5-2.4.2/b-print-2.4.2/cr-1.7.0/date-1.5.1/fc-4.3.0/fh-3.4.0/kt-2.11.0/r-2.5.0/rg-1.4.1/rr-1.4.1/sc-2.3.0/sb-1.6.0/sp-2.2.0/sl-1.7.0/sr-1.3.0/datatables.min.js">
+        </script>
+        <!-- jszip JS -->
+        <script src="{{ asset('plugins/jszip/jszip.min.js')}}"></script>
+        <!-- pdfmake JS -->
+        <script src="{{ asset('plugins/pdfmake/pdfmake.min.js')}}"></script>
         {{-- <!-- dataTables JS -->
         <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
         <script src="{{ asset('plugins/datatables-bs4/js/dataTables-bootstrap4.min.js')}}"></script>
@@ -347,14 +373,6 @@
         <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
         <!-- dataTables-buttons-print JS -->
         <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script> --}}
-        <script
-            src="https://cdn.datatables.net/v/bs4/jszip-3.10.1/dt-1.13.8/af-2.6.0/b-2.4.2/b-colvis-2.4.2/b-html5-2.4.2/b-print-2.4.2/cr-1.7.0/date-1.5.1/fc-4.3.0/fh-3.4.0/kt-2.11.0/r-2.5.0/rg-1.4.1/rr-1.4.1/sc-2.3.0/sb-1.6.0/sp-2.2.0/sl-1.7.0/sr-1.3.0/datatables.min.js">
-        </script>
-        <!-- jszip JS -->
-        <script src="{{ asset('plugins/jszip/jszip.min.js')}}"></script>
-        <!-- pdfmake JS -->
-        <script src="{{ asset('plugins/pdfmake/pdfmake.min.js')}}"></script>
-
         <!-- AdminLTE App -->
         <script src="dist/js/adminlte.min.js"></script>
         @yield('additional-script')

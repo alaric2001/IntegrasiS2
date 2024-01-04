@@ -71,27 +71,27 @@
                     @csrf
                     <div class="form-group" hidden>
                         <label for="name">ID</label>
-                        <input class="form-control" type="text" name="name" placeholder="">
+                        <input class="form-control" type="text" name="name" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="name">Nama</label>
-                        <input class="form-control" type="text" name="name" placeholder="Masukkan Nama">
+                        <input class="form-control" type="text" name="name" placeholder="Masukkan Nama" required>
                     </div>
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <select class="form-control" id="location">
+                        <select class="form-control" id="location" required>
                             <option>Sector 23</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="type">Type</label>
-                        <select class="form-control" id="type">
+                        <select class="form-control" id="type" required>
                             <option>NewXT</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="Equipment">Equipment</label>
-                        <select multiple="multiple" class="form-control select2-multiple" id="Equipment">
+                        <select multiple="multiple" class="form-control select2-multiple" id="Equipment" required>
                             <option>Conveyor XYZ</option>
                             <option>Ultrasonic XYZ</option>
                         </select>

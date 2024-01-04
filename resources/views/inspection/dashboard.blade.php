@@ -28,6 +28,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Inspection Date</th>
+                    <th>Inspection Time</th>
                     <th>Batch</th>
                     <th>Total Product</th>
                     <th>Good Quality</th>
@@ -40,6 +41,7 @@
                 <tr>
                     <td>2342</td>
                     <td>1-1-2024</td>
+                    <td>12:00 AM</td>
                     <td>Batch 4</td>
                     <td>43</td>
                     <td>42</td>
@@ -52,6 +54,7 @@
                 <tr>
                     <td>2342</td>
                     <td>1-1-2024</td>
+                    <td>12:00 AM</td>
                     <td>Batch 5</td>
                     <td>45</td>
                     <td>43</td>
@@ -82,11 +85,11 @@
                     @csrf
                     <div class="form-group" hidden>
                         <label for="id">ID</label>
-                        <input class="form-control" type="hidden" name="id" placeholder="">
+                        <input class="form-control" type="hidden" name="id" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="aktivitas">Activity</label>
-                        <select class="form-control" id="aktivitas">
+                        <select class="form-control" id="aktivitas" required>
                             <option value="Act. Billet">Act. Billet</option>
                             <option value="Act. Ingot">Act. Ingot</option>
                             <option value="Act. Alloy">Act. Alloy</option>
@@ -94,16 +97,16 @@
                     </div>
                     <div class="form-group">
                         <label for="date">Date</label>
-                        <input class="form-control" type="date" name="date" placeholder="">
+                        <input class="form-control" type="date" name="date" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="time">Time</label>
-                        <input class="form-control" type="time" name="time" placeholder="">
+                        <input class="form-control" type="time" name="time" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="batch">Batch</label>
                         <input class="form-control" type="number" name="batch" min="1"
-                            placeholder="Masukkan Nomor Batch">
+                            placeholder="Masukkan Nomor Batch" required>
                     </div>
                     <div class="form-group">
                         <label for="badProduct">Produk Cacat</label>
