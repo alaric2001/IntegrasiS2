@@ -30,6 +30,7 @@ class Inspection1Factory extends Factory
             'keterangan' => $this->faker->sentence($nbWords = $this->faker->numberBetween(1, 7)),
             'activity_id' => 1,
             'aluminium_id' => 1,
+            'batch_id' => 1
         ];
     }
 }

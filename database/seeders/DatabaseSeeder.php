@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ConveyorsTableSeeder::class);
         $this->call(UltrasonicsTableSeeder::class);
         $this->call(ActivityTableSeeder::class);
+        $this->call(BatchTableSeeder::class);
 
         // Inspection1Factory::factory(5)->create();
         Inspection1Factory::new()->count(15)->create();
