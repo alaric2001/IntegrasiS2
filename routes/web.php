@@ -20,13 +20,42 @@ use App\Http\Controllers\OperatorController;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/equipment', function () {
+Route::get('/eqdashboard', function () {
     return view('equipment/dashboard');
 });
-Route::get('/detail', function () {
+Route::get('/eqdetail', function () {
     return view('equipment/detail');
 });
-
+Route::get('/conveyor', function () {
+    return view('equipment/conveyor');
+});
+Route::get('/ultrasonic', function () {
+    return view('equipment/ultrasonic');
+});
+Route::get('/acdashboard', function () {
+    return view('activity/dashboard');
+});
+Route::get('/acdetail', function () {
+    return view('activity/detail');
+});
+Route::get('/inspecdashboard', function () {
+    return view('inspection/dashboard');
+});
+Route::get('/inspecdetail', function () {
+    return view('inspection/detail');
+});
+Route::get('/bcdashboard', function () {
+    return view('batch/dashboard');
+});
+Route::get('/bcdetail', function () {
+    return view('batch/detail');
+});
+Route::get('/prdashboard', function () {
+    return view('product/dashboard');
+});
+Route::get('/prdetail', function () {
+    return view('product/detail');
+});
 Route::resource('conveyors', ConveyorController::class);
 Route::resource('ultrasonics', UltrasonicController::class);
 Route::resource('activities', ActivityController::class);
