@@ -1,16 +1,16 @@
 @extends("template.main")
-@section('title','Product Dashboard -')
-@section('header','Product Dashboard')
+@section('title','Batch Dashboard -')
+@section('header','Batch Dashboard')
 @section('additional-header')
-<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addProduct">Tambah Product
+<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addBatch">Tambah Batch
     Baru</button>
 @endsection
 @section('content')
-<!-- Product List Card -->
+<!-- Batch List Card -->
 <div class="card mx-2">
     <!-- Card Header -->
     <div class="card-header">
-        <a class="h4 font-weight-bold" data-card-widget="collapse">Product List</a>
+        <a class="h4 font-weight-bold" data-card-widget="collapse">Batch List</a>
         <div class="card-tools">
             <!-- Collapse Button -->
             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -27,35 +27,32 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Product Date</th>
-                    <th>Product Time</th>
-                    <th>Batch</th>
-                    <th>Quality</th>
-                    <th>Keterangan</th>
+                    <th>Waktu Produksi</th>
+                    <th>Total Product</th>
+                    <th>Good Quality</th>
+                    <th>Bad Quality</th>
                     <th class="fit"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>2342</td>
-                    <td>1-1-2024</td>
-                    <td>12:00 AM</td>
-                    <td>Batch 4</td>
-                    <td>Good</td>
-                    <td>-</td>
+                    <td>1-1-2024 12:00 AM</td>
+                    <td>54</td>
+                    <td>53</td>
+                    <td>1</td>
                     <th class="fit">
-                        <a href="/prdetail" class="btn btn-primary">Cek Detail</a>
+                        <a href="/bcdetail" class="btn btn-primary">Cek Detail</a>
                     </th>
                 </tr>
                 <tr>
                     <td>2342</td>
-                    <td>1-1-2024</td>
-                    <td>12:00 AM</td>
-                    <td>Batch 5</td>
-                    <td>Bad</td>
-                    <td>Cacat</td>
+                    <td>1-1-2024 12:00 AM</td>
+                    <td>55</td>
+                    <td>53</td>
+                    <td>2</td>
                     <th class="fit">
-                        <a href="/prdetail" class="btn btn-primary">Cek Detail</a>
+                        <a href="/bcdetail" class="btn btn-primary">Cek Detail</a>
                     </th>
                 </tr>
             </tbody>
@@ -63,13 +60,13 @@
     </div>
     <!-- /.card-body -->
 </div>
-<!-- /.Product List card -->
+<!-- /.Batch List card -->
 <!-- Modal add-->
-<div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="addProduct" aria-hidden="true">
+<div class="modal fade" id="addBatch" tabindex="-1" aria-labelledby="addBatch" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Edit Product</h5>
+                <h5 class="modal-title">Edit Batch</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -83,20 +80,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="aktivitas">Activity</label>
+                        <label for="aktivitas">Aktivitas</label>
                         <select class="form-control" id="aktivitas" required>
-                            <option value="Act. Billet">Act. Billet</option>
-                            <option value="Act. Ingot">Act. Ingot</option>
-                            <option value="Act. Alloy">Act. Alloy</option>
+                            <option value="Dept. Billet">Dept. Billet</option>
+                            <option value="Dept. Ingot">Dept. Ingot</option>
+                            <option value="Dept. Alloy">Dept. Alloy</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="date">Date</label>
-                        <input class="form-control" type="date" name="date" placeholder="" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Time</label>
-                        <input class="form-control" type="time" name="time" placeholder="" required>
+                        <label for="waktuProduksi">Waktu Produksi</label>
+                        <input class="form-control" type="datetime-local" name="waktuProduksi" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="batch">Batch</label>
@@ -104,16 +97,11 @@
                             placeholder="Masukkan Nomor Batch" required>
                     </div>
                     <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="badProductCheckbox">
-                            <label class="custom-control-label" for="badProductCheckbox">Produk Cacat?</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="keterangan">Keterangan</label>
-                        <select class="form-control" id="keterangan" multiple="multiple">
-                            <option>Cacat</option>
-                            <option>Ketebalan</option>
+                        <label for="product">Pilih Produk</label>
+                        <select class="form-control" id="product" multiple="multiple">
+                            <option value="123">123</option>
+                            <option value="124">124</option>
+                            <option value="125">125</option>
                         </select>
                     </div>
                 </div>
@@ -144,7 +132,7 @@
                 },
                 {
                     extend:'print',
-                    title: 'Product Data',
+                    title: 'Batch Data',
                     messageBottom:'Copyright© ' + new Date().getFullYear() + ' by Inalum'
                 }
             ],
@@ -156,15 +144,7 @@
 </script>
 <script>
     $(document).ready(function() {
-        $('#badProduct').select2({
-        placeholder: 'Pilih Produk Cacat',
-        allowClear: true,
-        })
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#keterangan').select2({
+        $('#product').select2({
         placeholder: 'Tulis Keterangan',
         allowClear: true,
         tags: true,

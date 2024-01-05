@@ -52,7 +52,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Product Baru</h5>
+                <h5 class="modal-title">Edit Product</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -74,17 +74,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="date">Date</label>
-                        <input class="form-control" type="date" name="date" placeholder="" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Time</label>
-                        <input class="form-control" type="time" name="time" placeholder="" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="batch">Batch</label>
-                        <input class="form-control" type="number" name="batch" min="1"
-                            placeholder="Masukkan Nomor Batch" required>
+                        <label for="timestamp">Date</label>
+                        <input class="form-control" type="datetime-local" name="timestamp" placeholder="" required>
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
@@ -93,10 +84,11 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        {{-- Ini disave Json soalnya untuk per option dipisahin biar kek tag gt bisa di analisis ntar --}}
                         <label for="keterangan">Keterangan</label>
                         <select class="form-control" id="keterangan" multiple="multiple">
-                            <option>Cacat</option>
-                            <option>Ketebalan</option>
+                            <option value="Cacat">Cacat</option>
+                            <option value="Ketebalan">Ketebalan</option>
                         </select>
                     </div>
                 </div>

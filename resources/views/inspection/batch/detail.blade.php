@@ -128,9 +128,9 @@
                                 <td>2345325</td>
                             </tr>
                             <tr>
-                                <td class="fit"><b>Activity</b></td>
+                                <td class="fit"><b>Product ID</b></td>
                                 <td class="fit">:</td>
-                                <td>Dept. Billet</td>
+                                <td>123, 124, 125</td>
                             </tr>
                             <tr>
                                 <td class="fit"><b>Batch Date</b></td>
@@ -143,19 +143,24 @@
                                 <td>12:00 AM</td>
                             </tr>
                             <tr>
-                                <td class="fit"><b>Batch</b></td>
+                                <td class="fit"><b>Total Product</b></td>
                                 <td class="fit">:</td>
-                                <td>Batch 23</td>
+                                <td>54</td>
                             </tr>
                             <tr>
-                                <td class="fit"><b>Quality</b></td>
+                                <td class="fit"><b>Good Quality</b></td>
                                 <td class="fit">:</td>
-                                <td>Good</td>
+                                <td>53</td>
+                            </tr>
+                            <tr>
+                                <td class="fit"><b>Bad Quality</b></td>
+                                <td class="fit">:</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td class="fit"><b>Keterangan</b></td>
                                 <td class="fit">:</td>
-                                <td>-</td>
+                                <td>Ketebalaan, Cacat</td>
                             </tr>
                         </tbody>
                     </table>

@@ -45,16 +45,16 @@ Route::get('/inspecdetail', function () {
     return view('inspection/detail');
 });
 Route::get('/bcdashboard', function () {
-    return view('batch/dashboard');
+    return view('inspection/batch/dashboard');
 });
 Route::get('/bcdetail', function () {
-    return view('batch/detail');
+    return view('inspection/batch/detail');
 });
 Route::get('/prdashboard', function () {
-    return view('product/dashboard');
+    return view('inspection/product/dashboard');
 });
 Route::get('/prdetail', function () {
-    return view('product/detail');
+    return view('inspection/product/detail');
 });
 Route::resource('conveyors', ConveyorController::class);
 Route::resource('ultrasonics', UltrasonicController::class);
