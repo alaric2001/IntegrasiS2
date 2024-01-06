@@ -59,7 +59,8 @@ class ActivityController extends Controller
 
     public function show(string $id)
     {
-        $detail_activity = Activity::find($id);
+        // $detail_activity = Activity::find($id);
+        $detail_activity = Activity::withCount('inspection')->find($id);
         // Menampilkan halaman detail untuk aktivitas tertentu
         // dd($detail_activity);
         return view('activity.detail', compact('detail_activity'));

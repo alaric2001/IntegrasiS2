@@ -32,7 +32,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
         <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        {{-- <link rel="stylesheet" href="dist/css/adminlte.min.css"> --}}
+        <link href="{{ asset('/dist/css/adminlte.min.css') }}" rel="stylesheet">
 
         <style>
             /* dark mode dropdown dataTables*/
@@ -141,8 +142,8 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href="/" id="logo" class="brand-link logo-switch mx-auto text-center">
-                    <img src="Inalum Logo.png" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs">
-                    <img src="Inalum logo text.png" alt="AdminLTE Docs Logo Large" class="brand-image-xs logo-xl">
+                    <img src="{{ asset('Inalum Logo.png') }}" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs">
+                    <img src="{{ asset('Inalum logo text.png') }}" alt="AdminLTE Docs Logo Large" class="brand-image-xs logo-xl">
                 </a>
 
                 <!-- Sidebar -->
@@ -150,7 +151,7 @@
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
                             <a href="/profile" class="d-block">Shobrun Jamil</a>

@@ -1,7 +1,7 @@
 @extends('template.main')
 {{-- @section('title', $detail_activity->nama . '<nama activity> Activity Details -') --}}
-@section('title','<nama activity> Activity Details -')
-@section('header', $detail_activity->nama .'Activity Details')
+@section('title', $detail_activity->nama .' Activity Details -')
+@section('header', $detail_activity->nama .' Activity Details')
 {{-- @section('header','<nama activity> </nama>Activity Details') --}}
 @section('content')
 <div class="container-fluid">
@@ -53,7 +53,7 @@
             <tr>
                 <td><b>Result</b></td>
                 <td>:</td>
-                <td>2341 Produk</td>
+                <td>{{ $detail_activity->inspection_count }}  Produk</td>
             </tr>
         </tbody>
     </table>
