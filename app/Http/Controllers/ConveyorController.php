@@ -3,17 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\Conveyor;
+use App\Models\Activity;
+use App\Models\Inspection;
+use App\Models\Batch;
 
 class ConveyorController extends Controller
 {
     public function index()
     {
         // Mengambil semua data conveyor dari database
-        $conveyors = Conveyor::all();
-        
+        $conveyors = Conveyor::with(['activity'])->get();
+
+         // Mengambil total conveyor yang memiliki status "Work"
+        $totalWorkConv = Conveyor::where('status', 'Work')->count();
+        $totalActiveActi = Activity::where('status', 'Active')->count();
+        $inspCount = Inspection::count();
+        $batchCount = Batch::count();
+        // dd($totalWorkConv);
         // Mengirim data conveyors ke view 'conveyors.index' untuk ditampilkan
-        return view('conveyors.index', compact('conveyors'));
+        return view('equipment/conveyor', compact('conveyors', 'totalWorkConv', 'totalActiveActi', 'inspCount', 'batchCount'));
+    }
+
+    public function show(Conveyor $conveyor)
+    {
+        // Menampilkan halaman detail untuk conveyor tertentu
+        return view('equipment/detail', compact('conveyor'));
     }
 
     public function create()
@@ -40,11 +56,7 @@ class ConveyorController extends Controller
                             ->with('success', 'Conveyor berhasil dibuat.');
     }
 
-    public function show(Conveyor $conveyor)
-    {
-        // Menampilkan halaman detail untuk conveyor tertentu
-        return view('conveyors.show', compact('conveyor'));
-    }
+    
 
     public function edit(Conveyor $conveyor)
     {

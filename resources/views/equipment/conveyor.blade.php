@@ -12,7 +12,7 @@
         <div class="col">
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $totalActiveActi }}</h3>
                     <p>Activity Active</p>
                 </div>
                 <div class="icon">
@@ -27,7 +27,7 @@
         <div class="col">
             <div class="small-box bg-success gap-2">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $totalWorkConv }}</h3>
                     <p>Equipment Active</p>
                 </div>
                 <div class="icon">
@@ -42,7 +42,7 @@
         <div class="col">
             <div class="small-box bg-olive gap-2">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $inspCount }}</h3>
                     <p>Product Today</p>
                 </div>
                 <div class="icon">
@@ -57,7 +57,7 @@
         <div class="col">
             <div class="small-box bg-danger gap-2">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $batchCount }}</h3>
                     <p>Batch Production</p>
                 </div>
                 <div class="icon">
@@ -168,28 +168,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2342</td>
-                    <td>Conveyor 12</td>
-                    <td>Xmil</td>
-                    <td>Dept Billet</td>
-                    <td>53/h</td>
-                    <td>Active</td>
-                    <th class="fit">
-                        <a href="/eqdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
-                <tr>
-                    <td>2342</td>
-                    <td>Conveyor 32</td>
-                    <td>Xmil</td>
-                    <td>Dept Billet</td>
-                    <td>53/h</td>
-                    <td>Active</td>
-                    <th class="fit">
-                        <a href="/eqdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
+                @foreach ($conveyors as $conv)
+                    <tr>
+                        <td>{{ $conv->id}}</td>
+                        <td>{{ $conv->nama}}</td>
+                        <td>{{ $conv->tipe}}</td>
+                        {{-- <td>{{ $conv->activity->nama}}</td> --}}
+                        <td>
+                            @foreach ($conv->activity as $activity)
+                                {{ $activity->nama }}
+                            @endforeach
+                        </td>
+                        <td>{{ $conv->kapasitas}} Product/H</td>
+                        <td>{{ $conv->status}}</td>
+                        <th class="fit">
+                            <a href="/eqdetail/{{ $conv->id }}" class="btn btn-primary">Cek Detail</a>
+                        </th>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

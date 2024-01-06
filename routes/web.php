@@ -26,9 +26,9 @@ Route::get('/eqdashboard', function () {
 Route::get('/eqdetail', function () {
     return view('equipment/detail');
 });
-Route::get('/conveyor', function () {
-    return view('equipment/conveyor');
-});
+// Route::get('/conveyor', function () {
+//     return view('equipment/conveyor');
+// });
 Route::get('/ultrasonic', function () {
     return view('equipment/ultrasonic');
 });
@@ -56,9 +56,13 @@ Route::get('/prdashboard', function () {
 Route::get('/prdetail', function () {
     return view('inspection/product/detail');
 });
-Route::resource('conveyors', ConveyorController::class);
+// Route::resource('conveyors', ConveyorController::class);
 Route::resource('ultrasonics', UltrasonicController::class);
 // Route::resource('activities', ActivityController::class);
+
+
+Route::get('/conveyor', [ConveyorController::class, 'index']);
+
 Route::get('/acdashboard', [ActivityController::class, 'index']);
 Route::get('/acdetail/{id}', [ActivityController::class, 'show']);
 
