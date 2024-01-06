@@ -15,7 +15,7 @@
         <div class="col">
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $totalActiveActi }}</h3>
                     <p>Activity Active</p>
                 </div>
                 <div class="icon">
@@ -30,7 +30,7 @@
         <div class="col">
             <div class="small-box bg-success gap-2">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $totalWorkUltra }}</h3>
                     <p>Equipment Active</p>
                 </div>
                 <div class="icon">
@@ -45,7 +45,7 @@
         <div class="col">
             <div class="small-box bg-olive gap-2">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $inspCount }}</h3>
                     <p>Product Today</p>
                 </div>
                 <div class="icon">
@@ -60,7 +60,7 @@
         <div class="col">
             <div class="small-box bg-danger gap-2">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{ $batchCount }}</h3>
                     <p>Batch Production</p>
                 </div>
                 <div class="icon">
@@ -71,72 +71,6 @@
                 </a>
             </div>
         </div>
-        {{-- <a href="#1" class="mb-3 pr-3">
-            <div class="col p-0">
-                <div class="info-box mb-0 p-0">
-                    <span class="info-box-icon bg-info"><i class="far fa-bookmark"></i></span>
-                    <div class="info-box-content m-3 p-0">
-                        <span class="info-box-text">Calibration Accuracy</span>
-                        <span class="info-box-number">41,410</span>
-                        <div class="progress">
-                            <div id="calibrationAccuracyBar1" class="progress-bar bg-success" role="progressbar"
-                                style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            <div id="calibrationAccuracyBar2" class="progress-bar bg-danger" role="progressbar"
-                                style="width: 10%; margin-left: -100%;" aria-valuenow="10" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                        <span class="progress-description">
-                            CA = (Actual Calibration Result / Standard Calibration Value) × 100%
-
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="#1" class="mb-3 pr-3">
-            <div class="col p-0">
-                <div class="info-box mb-0 p-0">
-                    <span class="info-box-icon bg-info"><i class="far fa-bookmark"></i></span>
-                    <div class="info-box-content m-3 p-0">
-                        <span class="info-box-text">Ultrasonic Signal Strength</span>
-                        <span class="info-box-number">41,410</span>
-                        <div class="progress">
-                            <div id="signalStrength1" class="progress-bar bg-success" role="progressbar"
-                                style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            <div id="signalStrength2" class="progress-bar bg-danger" role="progressbar"
-                                style="width: 10%; margin-left: -100%;" aria-valuenow="10" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                        <span class="progress-description">
-                            USS = Average Signal Amplitude over a set period
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="#1" class="mb-3 pr-3">
-            <div class="col p-0">
-                <div class="info-box mb-0 p-0">
-                    <span class="info-box-icon bg-info"><i class="far fa-bookmark"></i></span>
-                    <div class="info-box-content m-3 p-0">
-                        <span class="info-box-text">Ultrasonic Energy Consumption</span>
-                        <span class="info-box-number">41,410</span>
-                        <div class="progress">
-                            <div id="energyConsumption1" class="progress-bar bg-success" role="progressbar"
-                                style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            <div id="energyConsumption2" class="progress-bar bg-danger" role="progressbar"
-                                style="width: 10%; margin-left: -100%;" aria-valuenow="10" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                        <span class="progress-description">
-                            UEC = Total Energy Consumed during Operation (in kWh)
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </a>--}}
     </div>
 </div>
 <!-- /.KPI Card Group -->
@@ -165,34 +99,29 @@
                     <th>Nama</th>
                     <th>Tipe</th>
                     <th>Aktivitas</th>
-                    <th>Kapasitas</th>
+                    {{-- <th>Kapasitas</th> --}}
                     <th>Status</th>
                     <th class="fit"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2342</td>
-                    <td>Ultrasonic 12</td>
-                    <td>Xmil</td>
-                    <td>Dept Billet</td>
-                    <td>53/h</td>
-                    <td>Active</td>
-                    <th class="fit">
-                        <a href="/eqdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
-                <tr>
-                    <td>2342</td>
-                    <td>Ultrasonic 32</td>
-                    <td>Xmil</td>
-                    <td>Dept Billet</td>
-                    <td>53/h</td>
-                    <td>Active</td>
-                    <th class="fit">
-                        <a href="/eqdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
+                @foreach ($ultrasonics as $ultra)
+                    <tr>
+                        <td>{{ $ultra->id}}</td>
+                        <td>{{ $ultra->nama}}</td>
+                        <td>{{ $ultra->tipe}}</td>
+                        <td>
+                            @foreach ($ultra->activity as $activity)
+                                {{ $activity->nama }} | 
+                            @endforeach
+                        </td>
+                        {{-- <td>{{ $ultra->kapasitas}} Product/H</td> --}}
+                        <td>{{ $ultra->status}}</td>
+                        <th class="fit">
+                            <a href="/eqdetail/{{ $ultra->id }}" class="btn btn-primary">Cek Detail</a>
+                        </th>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

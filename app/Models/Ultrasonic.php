@@ -9,4 +9,9 @@ class Ultrasonic extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function activity()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }

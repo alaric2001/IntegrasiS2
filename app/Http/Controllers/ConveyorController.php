@@ -16,7 +16,6 @@ class ConveyorController extends Controller
         // Mengambil semua data conveyor dari database
         $conveyors = Conveyor::with(['activity'])->get();
 
-         // Mengambil total conveyor yang memiliki status "Work"
         $totalWorkConv = Conveyor::where('status', 'Work')->count();
         $totalActiveActi = Activity::where('status', 'Active')->count();
         $inspCount = Inspection::count();

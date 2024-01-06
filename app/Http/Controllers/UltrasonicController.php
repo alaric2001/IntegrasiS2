@@ -5,15 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ultrasonic;
 
+use App\Models\Activity;
+use App\Models\Inspection;
+use App\Models\Batch;
+
 class UltrasonicController extends Controller
 {
     public function index()
     {
         // Mengambil semua data ultrasonic
-        $ultrasonics = Ultrasonic::all();
+        $ultrasonics = Ultrasonic::with(['activity'])->get();
         
+        $totalWorkUltra = Ultrasonic::where('status', 'Work')->count();
+        $totalActiveActi = Activity::where('status', 'Active')->count();
+        $inspCount = Inspection::count();
+        $batchCount = Batch::count();
         // Mengembalikan tampilan index dari ultrasonics dan melewatkan data ultrasonics ke view tersebut
-        return view('ultrasonics.index', compact('ultrasonics'));
+        return view('equipment.ultrasonic', compact('ultrasonics', 'totalWorkUltra', 'totalActiveActi', 'inspCount', 'batchCount'));
+    }
+
+
+    public function show(Ultrasonic $ultrasonic)
+    {
+        // Menampilkan detail dari ultrasonic tertentu
+        return view('equipment.detail', compact('ultrasonic'));
     }
 
     public function create()
@@ -39,13 +54,7 @@ class UltrasonicController extends Controller
                         ->with('success', 'Ultrasonic berhasil dibuat.');
     }
 
-    public function show(Ultrasonic $ultrasonic)
-    {
-        // Menampilkan detail dari ultrasonic tertentu
-        return view('ultrasonics.show', compact('ultrasonic'));
-    }
-
-    public function edit(Ultrasonic $ultrasonic)
+        public function edit(Ultrasonic $ultrasonic)
     {
         // Mengembalikan tampilan untuk mengedit data ultrasonic tertentu
         return view('ultrasonics.edit', compact('ultrasonic'));

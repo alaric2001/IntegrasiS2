@@ -176,7 +176,7 @@
                         {{-- <td>{{ $conv->activity->nama}}</td> --}}
                         <td>
                             @foreach ($conv->activity as $activity)
-                                {{ $activity->nama }}
+                                {{ $activity->nama }} | 
                             @endforeach
                         </td>
                         <td>{{ $conv->kapasitas}} Product/H</td>

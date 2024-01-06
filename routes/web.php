@@ -62,6 +62,7 @@ Route::resource('ultrasonics', UltrasonicController::class);
 
 
 Route::get('/conveyor', [ConveyorController::class, 'index']);
+Route::get('/ultrasonic', [UltrasonicController::class, 'index']);
 
 Route::get('/acdashboard', [ActivityController::class, 'index']);
 Route::get('/acdetail/{id}', [ActivityController::class, 'show']);
