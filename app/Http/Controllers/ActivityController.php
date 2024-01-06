@@ -7,16 +7,20 @@ use App\Models\Activity;
 use App\Models\Operator;
 use App\Models\Ultrasonic;
 use App\Models\Conveyor;
+use App\Models\Inspection;
 
 class ActivityController extends Controller
 {
     public function index()
     {
         // Mengambil semua data aktivitas beserta data operator, ultrasonic, dan conveyor yang terkait
-        $activities = Activity::with(['operator', 'ultrasonic', 'conveyor'])->get();
+        $activities = Activity::with(['operator', 'ultrasonic', 'conveyor', 'inspection'])->get();
+        // Load the count of inspections for each activity
+        // $activities->loadCount('inspection');
         
         // Mengirim data aktivitas ke view 'activities.index' untuk ditampilkan
-        return view('activities.index', compact('activities'));
+        return view('activity.dashboard', compact('activities'));
+        // dd($activities);
     }
 
     public function create()

@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call(BatchTableSeeder::class);
 
         // Inspection1Factory::factory(5)->create();
-        Inspection1Factory::new()->count(15)->create();
-        Inspection2Factory::new()->count(15)->create();
+        Inspection1Factory::new()->count(12)->create();
+        Inspection2Factory::new()->count(11)->create();
         Inspection3Factory::new()->count(5)->create();
         Inspection31Factory::new()->count(5)->create();
         Inspection32Factory::new()->count(5)->create();

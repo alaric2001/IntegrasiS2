@@ -32,9 +32,9 @@ Route::get('/conveyor', function () {
 Route::get('/ultrasonic', function () {
     return view('equipment/ultrasonic');
 });
-Route::get('/acdashboard', function () {
-    return view('activity/dashboard');
-});
+// Route::get('/acdashboard', function () {
+//     return view('activity/dashboard');
+// });
 Route::get('/acdetail', function () {
     return view('activity/detail');
 });
@@ -58,5 +58,8 @@ Route::get('/prdetail', function () {
 });
 Route::resource('conveyors', ConveyorController::class);
 Route::resource('ultrasonics', UltrasonicController::class);
-Route::resource('activities', ActivityController::class);
+// Route::resource('activities', ActivityController::class);
+Route::get('/acdashboard', [ActivityController::class, 'index']);
+
+
 Route::resource('operators', OperatorController::class);

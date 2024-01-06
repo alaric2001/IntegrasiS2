@@ -22,7 +22,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            @foreach ($activities as $activity)
+                <tr>
+                    <td>{{ $activity->id }}</td>
+                    <td>{{ $activity->nama }}</td>
+                    {{-- <td>{{ $activity->operator->name }}</td> --}}
+                    <td>Sector 23</td>
+                    <td>Ultracosnic {{ $activity->ultrasonic->id}}, Conveyor {{$activity->conveyor->id}}</td>
+                    <td>{{ $activity->duration }} Minute</td>
+                    <td>{{ $activity->batch }} Batch</td>
+                    <td>{{ $activity->inspection->count() }} Produk</td>
+                    {{-- <td>2341 Produk</td> --}}
+                    <td>{{ $activity->status }}</td>
+                    <th class="fit">
+                        <a href="/acdetail" class="btn btn-primary">Cek Detail</a>
+                    </th>
+                    <!-- Tambahkan kolom lain sesuai kebutuhan -->
+                </tr>
+            @endforeach
+            {{-- <tr>
                 <td>2345325</td>
                 <td>Dept BIllet</td>
                 <td>Sector 23</td>
@@ -34,20 +52,7 @@
                 <th class="fit">
                     <a href="/acdetail" class="btn btn-primary">Cek Detail</a>
                 </th>
-            </tr>
-            <tr>
-                <td>2345325</td>
-                <td>Dept BIllet</td>
-                <td>Sector 23</td>
-                <td>Conveyor X, Ultrasonic Y</td>
-                <td>8 hours 43 minute</td>
-                <td>32 Batch</td>
-                <td>2341 Produk</td>
-                <td>Active</td>
-                <th class="fit">
-                    <a href="/acdetail" class="btn btn-primary">Cek Detail</a>
-                </th>
-            </tr>
+            </tr> --}}
         </tbody>
     </table>
 </div>
