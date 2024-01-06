@@ -35,26 +35,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2342</td>
-                    <td>1-1-2024 12:00 AM</td>
-                    <td>54</td>
-                    <td>53</td>
-                    <td>1</td>
-                    <th class="fit">
-                        <a href="/bcdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
-                <tr>
-                    <td>2342</td>
-                    <td>1-1-2024 12:00 AM</td>
-                    <td>55</td>
-                    <td>53</td>
-                    <td>2</td>
-                    <th class="fit">
-                        <a href="/bcdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
+                @foreach ($batches as $bc)
+                    <tr>
+                        <td>{{ $bc->id }}</td>
+                        <td>{{ $bc->created_at }}</td>
+                        <td>{{ $bc->inspectionCount() }}</td>
+                        <td>{{ App\Models\Inspection::countByQuality('Good', $bc->id) }}</td>
+                        <td>{{ App\Models\Inspection::countByQuality('Bad', $bc->id) }}</td>
+                        <th class="fit">
+                            <a href="/bcdetail/{{ $bc->id }}" class="btn btn-primary">Cek Detail</a>
+                        </th>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

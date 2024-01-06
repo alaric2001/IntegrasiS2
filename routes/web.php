@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EqDashboardController;
 use App\Http\Controllers\ConveyorController;
 use App\Http\Controllers\UltrasonicController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\OperatorController;
-use App\Http\Controllers\EqDashboardController;
+use App\Http\Controllers\InspectionController;
+use App\Http\Controllers\BatchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,24 +32,24 @@ Route::get('/eqdetail', function () {
 // Route::get('/conveyor', function () {
 //     return view('equipment/conveyor');
 // });
-Route::get('/ultrasonic', function () {
-    return view('equipment/ultrasonic');
-});
+// Route::get('/ultrasonic', function () {
+//     return view('equipment/ultrasonic');
+// });
 // Route::get('/acdashboard', function () {
 //     return view('activity/dashboard');
 // });
 Route::get('/acdetail', function () {
     return view('activity/detail');
 });
-Route::get('/inspecdashboard', function () {
-    return view('inspection/dashboard');
-});
+// Route::get('/inspecdashboard', function () {
+//     return view('inspection/dashboard');
+// });
 Route::get('/inspecdetail', function () {
     return view('inspection/detail');
 });
-Route::get('/bcdashboard', function () {
-    return view('inspection/batch/dashboard');
-});
+// Route::get('/bcdashboard', function () {
+//     return view('inspection/batch/dashboard');
+// });
 Route::get('/bcdetail', function () {
     return view('inspection/batch/detail');
 });
@@ -68,6 +70,9 @@ Route::get('/ultrasonic', [UltrasonicController::class, 'index']);
 
 Route::get('/acdashboard', [ActivityController::class, 'index']);
 Route::get('/acdetail/{id}', [ActivityController::class, 'show']);
+
+Route::get('/inspecdashboard', [InspectionController::class, 'index']);
+Route::get('/bcdashboard', [BatchController::class, 'index']);
 
 
 Route::resource('operators', OperatorController::class);
