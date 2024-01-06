@@ -57,10 +57,12 @@ class ActivityController extends Controller
                             ->with('success', 'Aktivitas berhasil dibuat.');
     }
 
-    public function show(Activity $activity)
+    public function show(string $id)
     {
+        $detail_activity = Activity::find($id);
         // Menampilkan halaman detail untuk aktivitas tertentu
-        return view('activities.show', compact('activity'));
+        // dd($detail_activity);
+        return view('activity.detail', compact('detail_activity'));
     }
 
     public function edit(Activity $activity)

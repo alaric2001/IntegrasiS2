@@ -60,6 +60,7 @@ Route::resource('conveyors', ConveyorController::class);
 Route::resource('ultrasonics', UltrasonicController::class);
 // Route::resource('activities', ActivityController::class);
 Route::get('/acdashboard', [ActivityController::class, 'index']);
+Route::get('/acdetail/{id}', [ActivityController::class, 'show']);
 
 
 Route::resource('operators', OperatorController::class);

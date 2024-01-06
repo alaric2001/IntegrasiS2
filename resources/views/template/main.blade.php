@@ -30,8 +30,10 @@
         <!-- tempusdominus style -->
         {{-- <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4css/tempusdominus-bootstrap-4.css')}}"> --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
         <style>
             /* dark mode dropdown dataTables*/
             div.dt-button-collection {

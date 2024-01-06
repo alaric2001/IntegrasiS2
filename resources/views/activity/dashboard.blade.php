@@ -26,8 +26,7 @@
                 <tr>
                     <td>{{ $activity->id }}</td>
                     <td>{{ $activity->nama }}</td>
-                    {{-- <td>{{ $activity->operator->name }}</td> --}}
-                    <td>Sector 23</td>
+                    <td>{{ $activity->lokasi}}</td>
                     <td>Ultracosnic {{ $activity->ultrasonic->id}}, Conveyor {{$activity->conveyor->id}}</td>
                     <td>{{ $activity->duration }} Minute</td>
                     <td>{{ $activity->batch }} Batch</td>
@@ -35,7 +34,7 @@
                     {{-- <td>2341 Produk</td> --}}
                     <td>{{ $activity->status }}</td>
                     <th class="fit">
-                        <a href="/acdetail" class="btn btn-primary">Cek Detail</a>
+                        <a href="/acdetail/{{ $activity->id  }}" class="btn btn-primary">Cek Detail</a>
                     </th>
                     <!-- Tambahkan kolom lain sesuai kebutuhan -->
                 </tr>

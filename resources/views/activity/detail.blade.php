@@ -1,6 +1,8 @@
 @extends('template.main')
+{{-- @section('title', $detail_activity->nama . '<nama activity> Activity Details -') --}}
 @section('title','<nama activity> Activity Details -')
-@section('header', '<nama activity> Activity Details')
+@section('header', $detail_activity->nama .'Activity Details')
+{{-- @section('header','<nama activity> </nama>Activity Details') --}}
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -16,37 +18,37 @@
             <tr>
                 <td><b>ID</b></td>
                 <td>:</td>
-                <td>2345325</td>
+                <td>{{ $detail_activity->id }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Nama</b></td>
                 <td class="fit">:</td>
-                <td>Dept Billet</td>
+                <td>{{ $detail_activity->nama }}</td>
             </tr>
             <tr>
                 <td><b>Location</b></td>
                 <td>:</td>
-                <td>Sector 23</td>
+                <td>{{ $detail_activity->lokasi }}</td>
             </tr>
             <tr>
                 <td><b>Status</b></td>
                 <td>:</td>
-                <td>Active</td>
+                <td>{{ $detail_activity->status }}</td>
             </tr>
             <tr>
                 <td><b>Equipment</b></td>
                 <td>:</td>
-                <td>Conveyor X, Ultasonic Y</td>
+                <td>Conveyor {{$detail_activity->conveyor->id}}, Ultracosnic {{ $detail_activity->ultrasonic->id}}, </td>
             </tr>
             <tr>
                 <td><b>Active Hour</b></td>
                 <td>:</td>
-                <td>8 hours 43 minute</td>
+                <td>{{ $detail_activity->status }} Minute</td>
             </tr>
             <tr>
                 <td><b>Jlm Batch</b></td>
                 <td>:</td>
-                <td>32 Batch</td>
+                <td>{{ $detail_activity->batch }} Batch</td>
             </tr>
             <tr>
                 <td><b>Result</b></td>
