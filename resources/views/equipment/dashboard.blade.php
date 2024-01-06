@@ -26,7 +26,7 @@
             <div class="col">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $totalActiveActi }}</h3>
                         <p>Activity Active</p>
                     </div>
                     <div class="icon">
@@ -37,10 +37,11 @@
                     </a>
                 </div>
             </div>
+            <!-- Equipment Active Card-->
             <div class="col">
                 <div class="small-box bg-success gap-2">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $totalWorkConv }}</h3>
                         <p>Equipment Active</p>
                     </div>
                     <div class="icon">
@@ -51,10 +52,11 @@
                     </a>
                 </div>
             </div>
+            <!-- Product Today Card-->
             <div class="col">
                 <div class="small-box bg-olive gap-2">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $inspCount }}</h3>
                         <p>Product Today</p>
                     </div>
                     <div class="icon">
@@ -65,10 +67,11 @@
                     </a>
                 </div>
             </div>
+            <!-- Batch Production Card-->
             <div class="col">
                 <div class="small-box bg-danger gap-2">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $batchCount }}</h3>
                         <p>Batch Production</p>
                     </div>
                     <div class="icon">
@@ -105,7 +108,7 @@
             <div class="col">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $totalActiveActi }}</h3>
                         <p>Activity Active</p>
                     </div>
                     <div class="icon">
@@ -116,10 +119,11 @@
                     </a>
                 </div>
             </div>
+            <!-- Equipment Active Card-->
             <div class="col">
                 <div class="small-box bg-success gap-2">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $totalWorkUltra }}</h3>
                         <p>Equipment Active</p>
                     </div>
                     <div class="icon">
@@ -130,10 +134,11 @@
                     </a>
                 </div>
             </div>
+            <!-- Product Today Card-->
             <div class="col">
                 <div class="small-box bg-olive gap-2">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $inspCount }}</h3>
                         <p>Product Today</p>
                     </div>
                     <div class="icon">
@@ -144,10 +149,11 @@
                     </a>
                 </div>
             </div>
+            <!-- Batch Production Card-->
             <div class="col">
                 <div class="small-box bg-danger gap-2">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $batchCount }}</h3>
                         <p>Batch Production</p>
                     </div>
                     <div class="icon">

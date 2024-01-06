@@ -5,6 +5,7 @@ use App\Http\Controllers\ConveyorController;
 use App\Http\Controllers\UltrasonicController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\EqDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,9 @@ use App\Http\Controllers\OperatorController;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/eqdashboard', function () {
-    return view('equipment/dashboard');
-});
+// Route::get('/eqdashboard', function () {
+//     return view('equipment/dashboard');
+// });
 Route::get('/eqdetail', function () {
     return view('equipment/detail');
 });
@@ -60,6 +61,7 @@ Route::get('/prdetail', function () {
 Route::resource('ultrasonics', UltrasonicController::class);
 // Route::resource('activities', ActivityController::class);
 
+Route::get('/eqdashboard', [EqDashboardController::class, 'index']);
 
 Route::get('/conveyor', [ConveyorController::class, 'index']);
 Route::get('/ultrasonic', [UltrasonicController::class, 'index']);
