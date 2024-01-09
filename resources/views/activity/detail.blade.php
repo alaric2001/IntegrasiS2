@@ -43,7 +43,7 @@
             <tr>
                 <td><b>Active Hour</b></td>
                 <td>:</td>
-                <td>{{ $detail_activity->status }} Minute</td>
+                <td>{{ $detail_activity->duration }} Minute</td>
             </tr>
             <tr>
                 <td><b>Jlm Batch</b></td>

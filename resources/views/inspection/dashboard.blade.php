@@ -30,7 +30,7 @@
                     <th>Inspection Date</th>
                     <th>Inspection Time</th>
                     <th>Batch</th>
-                    {{-- <th>Total Product</th> --}}
+                    <th>Product</th>
                     <th>Quality</th>
                     {{-- <th>Bad Quality</th> --}}
                     <th>Keterangan</th>
@@ -44,7 +44,7 @@
                         <td>{{ $inspec->created_at->format('Y-m-d') }}</td>
                         <td>{{ $inspec->created_at->format('h:i A') }}</td>
                         <td>Batch {{ $inspec->batch->id }}</td>
-                        {{-- <td>43</td> --}}
+                        <td>{{ $inspec->aluminium->nama }}</td>
                         <td>{{ $inspec->quality }}</td>
                         {{-- <td>1</td> --}}
                         <td>{{ $inspec->keterangan }}</td>
