@@ -20,7 +20,6 @@ class BatchController extends Controller
 
     public function show(string $id)
     {
-            // Mengambil semua data batch dari database
         $batch_detail = Batch::find($id);
         // dd($batches);
         // Mengirim data batch dan hasil perhitungan ke view 'operators.index'

@@ -1,6 +1,6 @@
 @extends('template.main')
-@section('title','<nomor inspection> Inspection Details -')
-@section('header', '<nomor inspection> Inspection Details')
+@section('title','Inspection '.$inspec_detail->id.' Details -')
+@section('header','Inspection '.$inspec_detail->id.' Details')
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -16,47 +16,47 @@
             <tr>
                 <td class="fit"><b>ID</b></td>
                 <td class="fit">:</td>
-                <td>2345325</td>
+                <td>{{ $inspec_detail->id }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Activity</b></td>
                 <td class="fit">:</td>
-                <td>Dept. Billet</td>
+                <td>{{ $inspec_detail->activity->nama }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Inspection Date</b></td>
                 <td class="fit">:</td>
-                <td>1-1-2024</td>
+                <td>{{ $inspec_detail->created_at->format('Y-m-d') }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Inspection Time</b></td>
                 <td class="fit">:</td>
-                <td>12:00 AM</td>
+                <td>{{ $inspec_detail->created_at->format('h:i A') }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Batch</b></td>
                 <td class="fit">:</td>
-                <td>Batch 23</td>
+                <td>Batch {{ $inspec_detail->batch->id }}</td>
             </tr>
-            <tr>
+            {{-- <tr>
                 <td class="fit"><b>Total Product</b></td>
                 <td class="fit">:</td>
                 <td>43</td>
-            </tr>
+            </tr> --}}
             <tr>
-                <td class="fit"><b>Good Product</b></td>
+                <td class="fit"><b>Quality</b></td>
                 <td class="fit">:</td>
-                <td>42</td>
+                <td>{{ $inspec_detail->quality }}</td>
             </tr>
-            <tr>
+            {{-- <tr>
                 <td class="fit"><b>Bad Product</b></td>
                 <td class="fit">:</td>
                 <td>1</td>
-            </tr>
+            </tr> --}}
             <tr>
                 <td class="fit"><b>Keterangan</b></td>
                 <td class="fit">:</td>
-                <td>Ketebalan, Cacat</td>
+                <td>{{ $inspec_detail->keterangan }}</td>
             </tr>
         </tbody>
     </table>

@@ -19,13 +19,14 @@ class Inspection31Factory extends Factory
     public function definition(): array
     {
         $quality = $this->faker->randomElement(['Good', 'Bad']);
+        $ket = $this->faker->randomElement(['Pecah','Cacat', 'Penyok', 'Bengkok', 'Penyok, Bengkok, & Retak', 'Cacat & Lecet', 'Retak & Bengkok', 'Retak', 'Pecah & Retak']);
 
         return [
             'diameter' => $this->faker->numberBetween(177.8, 178),
             'berat' => $this->faker->numberBetween(386.5, 387),
             'quality' => $quality,
             'action' => $quality == 'Good' ? 'Accepted' : 'Reject',
-            'keterangan' => $this->faker->sentence($nbWords = $this->faker->numberBetween(1, 7)),
+            'keterangan' => $quality == 'Good' ? '-' : $ket,
             'activity_id' => 3,
             'aluminium_id' => 3,
             'batch_id' => 4

@@ -10,6 +10,16 @@ class Inspection extends Model
     use HasFactory;
     protected $guarded = [];
 
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class);
+    }
+
+    public function aluminium()
+    {
+        return $this->belongsTo(Aluminium::class);
+    }
+
     public function batch()
     {
         return $this->belongsTo(Batch::class, 'batch_id', 'id');

@@ -30,40 +30,29 @@
                     <th>Inspection Date</th>
                     <th>Inspection Time</th>
                     <th>Batch</th>
-                    <th>Total Product</th>
-                    <th>Good Quality</th>
-                    <th>Bad Quality</th>
+                    {{-- <th>Total Product</th> --}}
+                    <th>Quality</th>
+                    {{-- <th>Bad Quality</th> --}}
                     <th>Keterangan</th>
                     <th class="fit"></th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($inspections as $inspec)
                 <tr>
-                    <td>2342</td>
-                    <td>1-1-2024</td>
-                    <td>12:00 AM</td>
-                    <td>Batch 4</td>
-                    <td>43</td>
-                    <td>42</td>
-                    <td>1</td>
-                    <td>Ketebalan, Cacat</td>
+                    <td>{{ $inspec->id }}</td>
+                    <td>{{ $inspec->created_at->format('Y-m-d') }}</td>
+                    <td>{{ $inspec->created_at->format('h:i A') }}</td>
+                    <td>Batch {{ $inspec->batch->id }}</td>
+                    {{-- <td>43</td> --}}
+                    <td>{{ $inspec->quality }}</td>
+                    {{-- <td>1</td> --}}
+                    <td>{{ $inspec->keterangan }}</td>
                     <th class="fit">
-                        <a href="/inspecdetail" class="btn btn-primary">Cek Detail</a>
+                        <a href="/inspecdetail/{{ $inspec->id }}" class="btn btn-primary">Cek Detail</a>
                     </th>
                 </tr>
-                <tr>
-                    <td>2342</td>
-                    <td>1-1-2024</td>
-                    <td>12:00 AM</td>
-                    <td>Batch 5</td>
-                    <td>45</td>
-                    <td>43</td>
-                    <td>2</td>
-                    <td>Cacat</td>
-                    <th class="fit">
-                        <a href="/inspecdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
