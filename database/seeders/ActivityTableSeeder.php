@@ -49,8 +49,8 @@ class ActivityTableSeeder extends Seeder
         ]);
         Activity::create([
             'operator_id' => 1,
-            'ultrasonic_id' => 1,
-            'conveyor_id' => 1,
+            'ultrasonic_id' => 4,
+            'conveyor_id' => 2,
             'nama' => 'Stainless Furniture Production',
             'lokasi' => 'Stainless Furniture Production Area',
             'status' => 'Off',
@@ -60,8 +60,8 @@ class ActivityTableSeeder extends Seeder
         ]);
         Activity::create([
             'operator_id' => 2,
-            'ultrasonic_id' => 1,
-            'conveyor_id' => 1,
+            'ultrasonic_id' => 5,
+            'conveyor_id' => 4,
             'nama' => 'Dept Automotive',
             'lokasi' => 'automotive Production Area',
             'status' => 'Off',

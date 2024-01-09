@@ -25,10 +25,12 @@ class ConveyorController extends Controller
         return view('equipment/conveyor', compact('conveyors', 'totalWorkConv', 'totalActiveActi', 'inspCount', 'batchCount'));
     }
 
-    public function show(Conveyor $conveyor)
+    public function show(string $id)
     {
+        $detail_conv = Conveyor::with(['activity'])->find($id);
+        // dd($detail_conv);
         // Menampilkan halaman detail untuk conveyor tertentu
-        return view('equipment/detail', compact('conveyor'));
+        return view('equipment/detail_conv', compact('detail_conv'));
     }
 
     public function create()

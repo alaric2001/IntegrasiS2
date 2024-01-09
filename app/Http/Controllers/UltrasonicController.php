@@ -25,10 +25,12 @@ class UltrasonicController extends Controller
     }
 
 
-    public function show(Ultrasonic $ultrasonic)
+    public function show(string $id)
     {
-        // Menampilkan detail dari ultrasonic tertentu
-        return view('equipment.detail', compact('ultrasonic'));
+        $detail_ultra = Ultrasonic::with(['activity'])->find($id);
+        // dd($detail_conv);
+        // Menampilkan halaman detail untuk conveyor tertentu
+        return view('equipment/detail_ultra', compact('detail_ultra'));
     }
 
     public function create()

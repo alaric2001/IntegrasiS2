@@ -112,13 +112,13 @@
                         <td>{{ $ultra->tipe}}</td>
                         <td>
                             @foreach ($ultra->activity as $activity)
-                                {{ $activity->nama }} | 
+                                {{ $activity->nama }} 
                             @endforeach
                         </td>
                         {{-- <td>{{ $ultra->kapasitas}} Product/H</td> --}}
                         <td>{{ $ultra->status}}</td>
                         <th class="fit">
-                            <a href="/eqdetail/{{ $ultra->id }}" class="btn btn-primary">Cek Detail</a>
+                            <a href="/eq_ultra_detail/{{ $ultra->id }}" class="btn btn-primary">Cek Detail</a>
                         </th>
                     </tr>
                 @endforeach

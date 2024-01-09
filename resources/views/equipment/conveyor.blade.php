@@ -176,13 +176,13 @@
                         {{-- <td>{{ $conv->activity->nama}}</td> --}}
                         <td>
                             @foreach ($conv->activity as $activity)
-                                {{ $activity->nama }} | 
+                                {{ $activity->nama }} 
                             @endforeach
                         </td>
-                        <td>{{ $conv->kapasitas}} Product/H</td>
+                        <td>{{ $conv->kapasitas}} Kg/Product</td>
                         <td>{{ $conv->status}}</td>
                         <th class="fit">
-                            <a href="/eqdetail/{{ $conv->id }}" class="btn btn-primary">Cek Detail</a>
+                            <a href="/eq_conv_detail/{{ $conv->id }}" class="btn btn-primary">Cek Detail</a>
                         </th>
                     </tr>
                 @endforeach

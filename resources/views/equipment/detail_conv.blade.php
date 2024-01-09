@@ -1,6 +1,6 @@
 @extends('template.main')
-@section('title','<nama equipment> Equipment Details -')
-@section('header', '<nama equipment> Equipment Details')
+@section('title', $detail_conv->nama .' Equipment Details -')
+@section('header', $detail_conv->nama .' Equipment Details')
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -16,32 +16,31 @@
             <tr>
                 <td><b>ID</b></td>
                 <td>:</td>
-                <td>2345325</td>
+                <td>{{ $detail_conv->id }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Equipment Name</b></td>
                 <td class="fit">:</td>
-                <td>Conveyor XYZ</td>
-            </tr>
-            <tr>
-                <td><b>Equipment Type</b></td>
-                <td>:</td>
-                <td>NewXT</td>
+                <td>{{ $detail_conv->nama }}</td>
             </tr>
             <tr>
                 <td><b>Aktivitas</b></td>
                 <td>:</td>
-                <td>Act. Billet</td>
+                <td>
+                    @foreach ($detail_conv->activity as $activity)
+                        {{ $activity->nama }}
+                    @endforeach
+                </td>
             </tr>
             <tr>
                 <td><b>Kapasitas</b></td>
                 <td>:</td>
-                <td>53 product/jam</td>
+                <td>{{ $detail_conv->kapasitas }}</td>
             </tr>
             <tr>
                 <td><b>Status</b></td>
                 <td>:</td>
-                <td>Active</td>
+                <td>{{ $detail_conv->status }}</td>
             </tr>
         </tbody>
     </table>
