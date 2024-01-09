@@ -75,7 +75,8 @@ Route::get('/acdashboard', [ActivityController::class, 'index']);
 Route::get('/acdetail/{id}', [ActivityController::class, 'show']);
 
 Route::get('/inspecdashboard', [InspectionController::class, 'index']);
-Route::get('/bcdashboard', [BatchController::class, 'index']);
 
+Route::get('/bcdashboard', [BatchController::class, 'index']);
+Route::get('/bcdetail/{id}', [BatchController::class, 'show']);
 
 Route::resource('operators', OperatorController::class);

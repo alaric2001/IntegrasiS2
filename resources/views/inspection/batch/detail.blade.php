@@ -1,6 +1,6 @@
 @extends('template.main')
-@section('title','<nomor batch> Batch Details -')
-@section('header', '<nomor batch> Batch Details')
+@section('title', 'Batch '.$batch_detail->id.' Details -')
+@section('header', 'Batch '.$batch_detail->id.' Details')
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -16,32 +16,32 @@
             <tr>
                 <td class="fit"><b>ID</b></td>
                 <td class="fit">:</td>
-                <td>2345325</td>
+                <td>{{ $batch_detail->id }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Batch Date</b></td>
                 <td class="fit">:</td>
-                <td>1-1-2024</td>
+                <td>{{ $batch_detail->created_at->format('Y-m-d') }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Batch Time</b></td>
                 <td class="fit">:</td>
-                <td>12:00 AM</td>
+                <td>{{ $batch_detail->created_at->format('H:i:s') }}</td>
             </tr>
             <tr>
                 <td class="fit"><b>Batch</b></td>
                 <td class="fit">:</td>
-                <td>Batch 23</td>
+                <td>Batch {{ $batch_detail->id }}</td>
             </tr>
-            <tr>
+            {{-- <tr>
                 <td class="fit"><b>Quality</b></td>
                 <td class="fit">:</td>
                 <td>Good</td>
-            </tr>
+            </tr> --}}
             <tr>
                 <td class="fit"><b>Keterangan</b></td>
                 <td class="fit">:</td>
-                <td>-</td>
+                <td>{{ $batch_detail->deskripsi }}</td>
             </tr>
         </tbody>
     </table>

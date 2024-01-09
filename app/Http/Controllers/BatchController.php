@@ -17,4 +17,13 @@ class BatchController extends Controller
         // Mengirim data batch dan hasil perhitungan ke view 'operators.index'
         return view('inspection/batch/dashboard', compact('batches'));
     }
+
+    public function show(string $id)
+    {
+            // Mengambil semua data batch dari database
+        $batch_detail = Batch::find($id);
+        // dd($batches);
+        // Mengirim data batch dan hasil perhitungan ke view 'operators.index'
+        return view('inspection/batch/detail', compact('batch_detail'));
+    }
 }
