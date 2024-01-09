@@ -29,23 +29,26 @@
                     <th>ID</th>
                     <th>Waktu Produksi</th>
                     <th>Tipe Produk</th>
-                    <th>Batch</th>
-                    <th>Quality</th>
-                    <th class="fit"></th>
+                    <th>Keterangan</th>
+                    {{-- <th>Quality</th> --}}
+                    {{-- <th class="fit"></th> --}}
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2342</td>
-                    <td>1-1-2024 12:00 AM</td>
-                    <th>Aluminium Billet</th>
-                    <td>Batch 4</td>
-                    <td>Good</td>
-                    <th class="fit">
-                        <a href="/prdetail" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
-                <tr>
+                @foreach($aluminiums as $alum)
+                    <tr>
+                        <td>{{ $alum->id }}</td>
+                        <td>{{ $alum->created_at->format('d-m-y h:i A') }}</td>
+                        <th>{{ $alum->nama }}</th>
+                        <td style="max-width: 500px;">{{ $alum->deskripsi }}</td>
+                        {{-- <td>Good</td> --}}
+                        {{-- <th class="fit">
+                            <a href="/prdetail" class="btn btn-primary">Cek Detail</a>
+                        </th> --}}
+                    </tr>
+                @endforeach
+                
+                {{-- <tr>
                     <td>2342</td>
                     <td>1-1-2024 12:00 AM</td>
                     <td>Aluminium Ingot</td>
@@ -55,7 +58,7 @@
                     <th class="fit">
                         <a href="/prdetail" class="btn btn-primary">Cek Detail</a>
                     </th>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
     </div>

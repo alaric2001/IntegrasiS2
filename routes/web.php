@@ -8,6 +8,7 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\InspectionController;
 use App\Http\Controllers\BatchController;
+use App\Http\Controllers\AluminiumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,9 +54,9 @@ Route::get('/inspecdetail', function () {
 Route::get('/bcdetail', function () {
     return view('inspection/batch/detail');
 });
-Route::get('/prdashboard', function () {
-    return view('inspection/product/dashboard');
-});
+// Route::get('/prdashboard', function () {
+//     return view('inspection/product/dashboard');
+// });
 Route::get('/prdetail', function () {
     return view('inspection/product/detail');
 });
@@ -79,5 +80,7 @@ Route::get('/inspecdetail/{id}', [InspectionController::class, 'show']);
 
 Route::get('/bcdashboard', [BatchController::class, 'index']);
 Route::get('/bcdetail/{id}', [BatchController::class, 'show']);
+
+Route::get('/prdashboard', [AluminiumController::class, 'index']);
 
 Route::resource('operators', OperatorController::class);

@@ -39,19 +39,19 @@
             </thead>
             <tbody>
                 @foreach($inspections as $inspec)
-                <tr>
-                    <td>{{ $inspec->id }}</td>
-                    <td>{{ $inspec->created_at->format('Y-m-d') }}</td>
-                    <td>{{ $inspec->created_at->format('h:i A') }}</td>
-                    <td>Batch {{ $inspec->batch->id }}</td>
-                    {{-- <td>43</td> --}}
-                    <td>{{ $inspec->quality }}</td>
-                    {{-- <td>1</td> --}}
-                    <td>{{ $inspec->keterangan }}</td>
-                    <th class="fit">
-                        <a href="/inspecdetail/{{ $inspec->id }}" class="btn btn-primary">Cek Detail</a>
-                    </th>
-                </tr>
+                    <tr>
+                        <td>{{ $inspec->id }}</td>
+                        <td>{{ $inspec->created_at->format('Y-m-d') }}</td>
+                        <td>{{ $inspec->created_at->format('h:i A') }}</td>
+                        <td>Batch {{ $inspec->batch->id }}</td>
+                        {{-- <td>43</td> --}}
+                        <td>{{ $inspec->quality }}</td>
+                        {{-- <td>1</td> --}}
+                        <td>{{ $inspec->keterangan }}</td>
+                        <th class="fit">
+                            <a href="/inspecdetail/{{ $inspec->id }}" class="btn btn-primary">Cek Detail</a>
+                        </th>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
